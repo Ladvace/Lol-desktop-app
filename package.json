@@ -1,0 +1,56 @@
+{
+  "appId": "com.hamzaak.electron-react-webpack-boilerplate",
+  "name": "electron-react-webpack-boilerplate",
+  "productName": "Electron React Webpack Boilerplate",
+  "author": "Hamza AK",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A minimal desktop app that uses electron, react, webpack, and babel.",
+  "main": "public/electron.js",
+  "keywords": [
+    "Electron",
+    "React",
+    "Webpack",
+    "Babel"
+  ],
+  "scripts": {
+    "start": "npm-run-all --parallel start:react start:electron",
+    "start:electron": "electron .",
+    "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "bundle:react": "webpack --mode production",
+    "dist": "npm run \"bundle:react\" && node installers/windows/installer.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
+    "electron-devtools-installer": "^2.2.4",
+    "npm-run-all": "^4.1.5",
+    "react-hot-loader": "^4.3.11",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "dependencies": {
+    "connected-react-router": "^6.8.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-store": "^7.0.2",
+    "history": "^5.0.0",
+    "make-dir": "^3.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^16.6.0",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-persist-electron-storage": "^2.1.0",
+    "remove": "^0.1.5",
+    "styled-components": "^5.2.1"
+  }
+}

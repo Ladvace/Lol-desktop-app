@@ -74,18 +74,14 @@ export default function NavBar() {
     });
   }, []);
 
-  // <div style={{ width: "100%", height: 40, background: "black" }} onClick={() =>{console.log('ooo')}} ></div>
   return (
     <MainContainer
-      onClick={() => {
-        console.log("ooo");
+      onDoubleClick={() => {
+        console.log("ciao");
+        if (process.platform === "darwin") {
+          ipcRenderer.invoke("min-max-window");
+        }
       }}
-      // onDoubleClick={() => {
-      //   console.log("ciao");
-      //   if (process.platform === "darwin") {
-      //     ipcRenderer.invoke("min-max-window");
-      //   }
-      // }}
     >
       <Container>
         <div

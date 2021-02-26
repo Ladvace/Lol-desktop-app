@@ -91,6 +91,18 @@ ipcMain.handle("getIsWindowMaximized", () => {
   return !mainWindow.maximizable;
 });
 
+ipcMain.handle("min-max-window", () => {
+  if (mainWindow.isMaximized()) {
+    mainWindow.unmaximize();
+  } else {
+    mainWindow.maximize();
+  }
+});
+
+ipcMain.handle("minimize-window", () => {
+  mainWindow.minimize();
+});
+
 ipcMain.handle("quit-app", () => {
   mainWindow.close();
   mainWindow = null;

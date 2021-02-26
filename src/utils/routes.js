@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
-import AsyncComponent from "../../../common/components/AsyncComponent";
+import React, { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("../views/Home"));
+const Test = lazy(() => import("../views/Test"));
 
 function AsyncComponent(MyComponent) {
   return (props) => (
@@ -16,6 +16,10 @@ const routes = [
     path: "/",
     exact: true,
     component: AsyncComponent(Home),
+  },
+  {
+    path: "/test",
+    component: AsyncComponent(Test),
   },
 ];
 

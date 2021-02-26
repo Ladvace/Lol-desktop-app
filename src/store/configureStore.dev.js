@@ -1,18 +1,12 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { createHashHistory } from "history";
 import { routerMiddleware, routerActions } from "connected-react-router";
-import { persistReducer, persistStore } from "redux-persist";
 import { createLogger } from "redux-logger";
 import thunk from "./thunkEnhancer";
 import createRootReducer from "../reducers";
-import persistConfig from "./persistConfig";
 
 const history = createHashHistory();
 const rootReducer = createRootReducer(history);
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-console.log("TEST", persistConfig);
 
 const configureStore = () => {
   // Redux Configuration
@@ -30,6 +24,7 @@ const configureStore = () => {
       error: () => "#F20404",
     },
   });
+  
   middleware.push(logger);
 
   // Router Middleware
@@ -55,8 +50,7 @@ const configureStore = () => {
   const enhancer = composeEnhancers(...enhancers);
 
   // Create Store
-  const store = createStore(persistedReducer, enhancer);
-  const persistor = persistStore(store);
+  const store = createStore(rootReducer, enhancer);
 
   if (module.hot) {
     module.hot.accept(
@@ -65,7 +59,7 @@ const configureStore = () => {
     );
   }
 
-  return { store, persistor };
+  return { store };
 };
 
 export default { configureStore, history };

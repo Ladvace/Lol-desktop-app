@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
   
-  #app {
+  #root {
     color: ${(props) => props.theme.palette.text.primary};
     font-family: Inter, Roboto, Helvetica, sans-serif;
     font-size: 14px;

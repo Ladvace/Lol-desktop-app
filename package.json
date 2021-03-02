@@ -1,50 +1,53 @@
 {
-  "appId": "com.hamzaak.electron-react-webpack-boilerplate",
-  "name": "electron-react-webpack-boilerplate",
-  "productName": "Electron React Webpack Boilerplate",
-  "author": "Hamza AK",
-  "version": "1.0.0",
-  "license": "MIT",
-  "description": "A minimal desktop app that uses electron, react, webpack, and babel.",
-  "main": "public/electron.js",
-  "keywords": [
-    "Electron",
-    "React",
-    "Webpack",
-    "Babel"
-  ],
-  "scripts": {
-    "start": "npm-run-all --parallel start:react start:electron",
-    "start:electron": "electron .",
-    "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "bundle:react": "webpack --mode production",
-    "dist": "npm run \"bundle:react\" && node installers/windows/installer.js"
+  "name": "snowpack-electron-react",
+  "version": "0.0.2",
+  "description": "Template for snowpack, electron and react",
+  "main": "electron.js",
+  "publishConfig": {
+    "access": "public"
   },
+  "scripts": {
+    "dev": "concurrently \"npm run snowpack-dev\" \"npm run electron-start\"",
+    "build": "npm run snowpack-build",
+    "electron-start": "electron .",
+    "electron-prod": "cross-env NODE_ENV=production electron .",
+    "snowpack-dev": "snowpack dev --open none",
+    "snowpack-prepare": "snowpack install",
+    "snowpack-build": "snowpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepanvanzuriak/snowpack-electron-react.git"
+  },
+  "keywords": [
+    "snowpack",
+    "electron",
+    "react"
+  ],
+  "author": "Stepan Vanzuriak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stepanvanzuriak/snowpack-electron-react/issues"
+  },
+  "homepage": "./",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-styled-components": "^1.12.0",
-    "electron": "^11.3.0",
-    "electron-builder": "^20.39.0",
-    "electron-devtools-installer": "^2.2.4",
-    "npm-run-all": "^4.1.5",
-    "react-hot-loader": "^4.3.11",
-    "webpack": "^4.23.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11"
+    "@snowpack/app-scripts-react": "^2.0.0",
+    "@snowpack/plugin-webpack": "^2.3.0",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "11.3.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "snowpack": "^3.0.13"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "connected-react-router": "^6.8.0",
-    "electron-is-dev": "^1.1.0",
-    "history": "^5.0.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "builtin-modules": "^3.2.0",
+    "connected-react-router": "^6.9.1",
+    "history": "^4.0.0",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "redux": "^4.0.5",

@@ -6,9 +6,6 @@ import settings from "./settings/reducers";
 const createRootReducer = (history) =>
   combineReducers({
     // ...reducers,
-    // loading,
-    // modals,
-    // app, // persisted
     settings, // persisted
     router: connectRouter(history),
   });

@@ -1,4 +1,5 @@
 import React from "react";
+// import os from "os";
 import { useDispatch } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
@@ -9,9 +10,13 @@ const Container = styled.div`
 
 export default function Home() {
   const dispatch = useDispatch();
+  // console.log("OS: ", os.cpus(), os.totalmem());
   return (
-    <Container onClick={() => console.log("ciao")}>
+    <Container>
       Homeeee
+      {/* {os.arch()} */}
+      {/* {os.cpus()} */}
+      {/* {os.uptime()} */}
       <button
         onClick={() => {
           console.log("redirect");

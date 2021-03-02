@@ -1,25 +1,11 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Home from './views/home';
-
-// ReactDOM.render(
-//   <div>
-//     <Home />
-//   </div>,
-//   document.getElementById('app')
-// );
-
-// module.hot.accept();
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { configureStore, history } from "./store/configureStore";
+import { configureStore, history } from "./store/configureStore.prod";
 import theme from "./utils/theme";
 import Root from "./root";
-// import Home from "./views/Home";
 
 const ThemeProvider = ({ theme: themeUI, children }) => {
   return <StyledThemeProvider theme={themeUI}>{children}</StyledThemeProvider>;
@@ -37,7 +23,9 @@ ReactDOM.render(
       </ConnectedRouter>
     </ThemeProvider>
   </Provider>,
-  document.getElementById("app")
+  document.getElementById("root")
 );
 
-module.hot.accept();
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}

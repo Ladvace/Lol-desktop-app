@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ipcRenderer } from "electron";
+// import { ipcRenderer } from "electron";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -62,32 +62,31 @@ export default function NavBar() {
   const [isMaximized, setIsMaximized] = useState(false);
 
   useEffect(() => {
-    ipcRenderer
-      .invoke("getIsWindowMaximized")
+    window.api
+      .send("getIsWindowMaximized")
       .then(setIsMaximized)
       .catch(console.error);
-    ipcRenderer.on("window-maximized", () => {
+    window.api.receive("window-maximized", () => {
       setIsMaximized(true);
     });
-    ipcRenderer.on("window-minimized", () => {
+    window.api.receive("window-minimized", () => {
       setIsMaximized(false);
     });
   }, []);
 
   return (
     <MainContainer
-      onDoubleClick={() => {
-        console.log("ciao");
-        if (process.platform === "darwin") {
-          ipcRenderer.invoke("min-max-window");
-        }
-      }}
+    // onDoubleClick={() => {
+    //   if (process.platform === "darwin") {
+    //     ipcRenderer.invoke("min-max-window");
+    //     window.api.send("min-max-window");
+    //   }
+    // }}
     >
       <Container>
         <div
           onClick={() => {
-            console.log("minimize");
-            ipcRenderer.invoke("minimize-window");
+            window.api.send("minimize-window");
           }}
           css={`
             -webkit-app-region: no-drag;
@@ -96,7 +95,7 @@ export default function NavBar() {
           <FontAwesomeIcon icon={faWindowMinimize} />
         </div>
         <div
-          onClick={() => ipcRenderer.invoke("min-max-window")}
+          onClick={() => window.api.send("min-max-window")}
           css={`
             -webkit-app-region: no-drag;
           `}
@@ -110,7 +109,7 @@ export default function NavBar() {
             font-size: 18px;
             -webkit-app-region: no-drag;
           `}
-          onClick={() => ipcRenderer.invoke("quit-app")}
+          onClick={() => window.api.send("quit-app")}
         >
           <FontAwesomeIcon icon={faTimes} />
         </div>

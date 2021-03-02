@@ -1,52 +1,23 @@
-# Electron React Webpack Boilerplate
+# Template for Electron, Snowpack and React
 
-<p>
-  This useful boilerplate project uses <a href="http://electron.atom.io/">Electron</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="http://webpack.github.io/docs/">Webpack</a>, <a href="https://babeljs.io/">Babel</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> (HMR).
-</p>
+## Scripts
 
-<br>
+`dev` - Start snowpack dev and electron dev
 
-<div align="center">
-  <a href="https://electronjs.org/"><img src="./public/assets/electron.png" /></a>
-  <a href="https://facebook.github.io/react/"><img src="./public/assets/react.png" /></a>
-  <a href="https://webpack.github.io/"><img src="./public/assets/webpack.png" /></a>
-  <a href="https://babeljs.io/"><img src="./public/assets/babel.png" /></a>
-</div>
+`build` - Snowpack build
 
-<hr />
-<br />
+`electron-start` - Start only electron
 
-<div align="center">
-<img src="./public/assets/home.png" alt="Electron React Webpack Boilerplate"/>
-</div>
-<hr />
+`electron-prod` - Start only electron and set source as build folder
 
-## Features
+`snowpack-dev` - Start only snowpack dev
 
-* Electron 4
-* Electron Builder
-* React 16
-* Webpack 4
-* Babel 7
-* Hot Module Replacement
+## Changes
 
-## Installation
+### v0.0.2
 
-* `git clone https://github.com/hamzaak/electron-react-webpack-boilerplate.git`
-* cd electron-react-webpack-boilerplate
-* npm install
-* npm start
+All dependencies version updated: Snowpack to v3, Electron to v11, React to v17.0.1
 
-## Packing for distribution
+### v0.0.1
 
-To package the app fro windows platform:
-
-`npm run dist`
-
-## Maintainer
-
-- [Hamza Ak](https://www.linkedin.com/in/hamzaak/)
-
-## License
-
-MIT
+Initial release

@@ -24,7 +24,7 @@ const configureStore = () => {
       error: () => "#F20404",
     },
   });
-  
+
   middleware.push(logger);
 
   // Router Middleware

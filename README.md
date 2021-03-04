@@ -1,4 +1,19 @@
-# Template for Electron, Snowpack and React
+# Boilerplate for Electron, Snowpack and React
+
+This boilerplate uses Electron, React, React Router, Redux, Connected-react-router, Styled-components , Snowpack.
+
+## File structure
+
+Src
+└── components
+└── reducers
+└── store
+└── utils
+└── views
+────index.js
+────Root.js
+────electron.js
+────preload.js
 
 ## Scripts
 
@@ -12,12 +27,23 @@
 
 `snowpack-dev` - Start only snowpack dev
 
-## Changes
+## Support 💻
 
-### v0.0.2
+If you want to be an active contributor join the discord server [here](https://discord.gg/fnmKKWPWpB)
 
-All dependencies version updated: Snowpack to v3, Electron to v11, React to v17.0.1
+## Donation 💰
 
-### v0.0.1
+- If you want to support the me and the discord development consider voting the bot [here](https://top.gg/bot/589693244456042497) and
+  donating:
 
-Initial release
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WJWDBJENVNGHE)
+
+or
+
+[Donate](https://ko-fi.com/ladvace)
+
+## Authors ❤️
+
+- **Gianmarco Cavallo** (ladvace) - [Github Profile](https://github.com/Ladvace)
+
+### If you have any problems or question open an issue or feel free to contact me! 🔧😃

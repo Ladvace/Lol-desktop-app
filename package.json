@@ -1,7 +1,7 @@
 {
-  "name": "snowpack-electron-react",
-  "version": "0.0.2",
-  "description": "Template for snowpack, electron and react",
+  "name": "electron-snowpack-react-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for electron-reactjs-snowpack",
   "main": "electron.js",
   "publishConfig": {
     "access": "public"
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stepanvanzuriak/snowpack-electron-react.git"
+    "url": "git+https://github.com/Ladvace/Electron-snowpack-react-boilerplate.git"
   },
   "keywords": [
     "snowpack",
@@ -27,7 +27,7 @@
   "author": "Stepan Vanzuriak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stepanvanzuriak/snowpack-electron-react/issues"
+    "url": "https://github.com/Ladvace/Electron-snowpack-react-boilerplate/issues"
   },
   "homepage": "./",
   "devDependencies": {
@@ -42,9 +42,6 @@
     "snowpack": "^3.0.13"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@fortawesome/react-fontawesome": "^0.1.14",
     "builtin-modules": "^3.2.0",
     "connected-react-router": "^6.9.1",
     "history": "^4.0.0",

@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { Switch, Route } from "react-router";
-import { push } from "connected-react-router";
 import styled, { createGlobalStyle } from "styled-components";
 import routes from "./utils/routes";
 import NavBar from "./components/NavBar";
-import Home from "./views/Home";
-import Test from "./views/Test";
-// import Home from "./views/Home";
 import RouteBackground from "./components/RouteBackground";
 
 const GlobalStyles = createGlobalStyle`
@@ -68,19 +63,6 @@ function RouteWithSubRoutes(route) {
 }
 
 export default function root() {
-  const dispatch = useDispatch();
-
-  // const init = () => {
-  //   dispatch(push("/test"));
-  // };
-
-  // useEffect(() => {
-  //   dispatch(push("/"));
-  //   return () => {
-  //     init();
-  //   };
-  // }, []);
-
   return (
     <Wrapper>
       <NavBar />

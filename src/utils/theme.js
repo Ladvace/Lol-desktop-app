@@ -33,7 +33,7 @@ export default {
       900: "#050818",
     },
     colors: {
-      red: "#D64441",
+      red: "#a10702",
       yellow: "#FAB849",
       lavander: "#BB6BD9",
       green: "#27AE60",

@@ -12,13 +12,23 @@ contextBridge.exposeInMainWorld("api", {
       "quit-app",
       "min-max-window",
       "getIsWindowMaximized",
+      "lockChamp",
     ];
     if (validChannels.includes(channel)) {
       return ipcRenderer.invoke(channel, data);
     }
   },
   receive: (channel, func) => {
-    let validChannels = ["window-maximized", "window-minimized"];
+    let validChannels = [
+      "window-maximized",
+      "window-minimized",
+      "startSearchingGame",
+      "stopSearchingGame",
+      "Accepted",
+      "Declined",
+      "joinedChampSelect",
+      "quittedChampSelect",
+    ];
     if (validChannels.includes(channel)) {
       // Deliberately strip event as it includes `sender`
       ipcRenderer.on(channel, (event, ...args) => func(...args));

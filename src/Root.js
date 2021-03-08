@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { Switch, Route } from "react-router";
-import { push } from "connected-react-router";
 import styled, { createGlobalStyle } from "styled-components";
 import routes from "./utils/routes";
-import NavBar from "./components/NavBar";
-import Home from "./views/Home";
-import Test from "./views/Test";
-// import Home from "./views/Home";
+import SystemNavBar from "./components//SystemNavBar";
 import RouteBackground from "./components/RouteBackground";
 
 const GlobalStyles = createGlobalStyle`
@@ -16,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    border-radius: 10px;
     height: 100%;   
     margin: 0;
     overflow: hidden;
@@ -41,6 +37,7 @@ const Wrapper = styled.div`
   margin: 0;
   height: 100vh;
   width: 100vw;
+  border-radius: 10px;
 `;
 
 const MainContainer = styled.div`
@@ -68,22 +65,9 @@ function RouteWithSubRoutes(route) {
 }
 
 export default function root() {
-  const dispatch = useDispatch();
-
-  // const init = () => {
-  //   dispatch(push("/test"));
-  // };
-
-  // useEffect(() => {
-  //   dispatch(push("/"));
-  //   return () => {
-  //     init();
-  //   };
-  // }, []);
-
   return (
     <Wrapper>
-      <NavBar />
+      <SystemNavBar />
       <MainContainer>
         <GlobalStyles />
         <RouteBackground />
